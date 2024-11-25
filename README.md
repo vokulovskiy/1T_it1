@@ -27,7 +27,7 @@
 
 Пример вывода:
 
-![](Aspose.Words.f8467f36-192b-47f0-998c-73fef22bf33b.001.png)
+![](Aspose.Words.05e679ff-403f-49a9-a6b4-0b0caaa963c1.001.png)
 
 
 
@@ -43,10 +43,6 @@
 import os
 
 from datetime import datetime
-
-import getpass
-
-from sys import argv
 
 \# Задание пути
 
@@ -112,17 +108,11 @@ def greet\_user(name):
 
 if \_\_name\_\_ == "\_\_main\_\_":
 
-`    `args = argv
+`    `user = os.getenv("USER", "Stranger")
 
 `    `# Приветствие
 
-`    `if len(args) > 1:
-
-`        `greet\_user(args[1])
-
-`    `else:
-
-`        `greet\_user(getpass.getuser())
+`    `greet\_user(user)
 
 `    `file\_count, largest\_files = get\_top\_10\_largest\_files(path)
 
@@ -154,9 +144,9 @@ CMD ["python", "app.py", "Vladimir"]
 
 docker build -t vladok45/it1:v1 .
 
-docker run vladok45/it1:v1
+docker run -e USER=Anna vladok45/it1:v1
 
-![](Aspose.Words.f8467f36-192b-47f0-998c-73fef22bf33b.002.png)
+![](Aspose.Words.05e679ff-403f-49a9-a6b4-0b0caaa963c1.002.png)
 
 docker login
 
