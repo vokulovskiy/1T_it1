@@ -1,7 +1,5 @@
 import os
 from datetime import datetime
-import getpass
-from sys import argv
 
 # Задание пути
 # path = "C:/users/"  # Задайте путь здесь (закомментируйте для использования корневого каталога)
@@ -38,13 +36,10 @@ def greet_user(name):
     print(f"Привет, {name}! Сегодня {now.strftime('%d.%m.%Y %H:%M:%S')}.")
 
 if __name__ == "__main__":
-    args = argv
+    user = os.getenv("USER", "Stranger")
 
     # Приветствие
-    if len(args) > 1:
-        greet_user(args[1])
-    else:
-        greet_user(getpass.getuser())
+    greet_user(user)
 
     file_count, largest_files = get_top_10_largest_files(path)
 
