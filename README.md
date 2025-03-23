@@ -152,3 +152,4 @@ docker login
 
 docker push vladok45/it1:v1
 "Docker: vladok45/it1:v1" 
+"Docker: vladok45/it1:v1" 
